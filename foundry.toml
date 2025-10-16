@@ -3,6 +3,10 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+# Allow reading/writing under the script/target directory
+fs_permissions = [{ access = "read-write", path = "./script/target" }]
+
 remappings = [
     "@openzeppelin/contracts=lib/openzeppelin-contracts/contracts",
+    "@murky=lib/murky",
 ] # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
