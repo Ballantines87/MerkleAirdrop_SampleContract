@@ -4,7 +4,11 @@ out = "out"
 libs = ["lib"]
 
 # Allow reading/writing under the script/target directory
-fs_permissions = [{ access = "read-write", path = "./script/target" }]
+fs_permissions = [
+    { access = "read-write", path = "./script/target" },
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" },
+]
 
 remappings = [
     "@openzeppelin/contracts=lib/openzeppelin-contracts/contracts",
