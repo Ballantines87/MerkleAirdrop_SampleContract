@@ -172,3 +172,31 @@ contract MerkleAirdrop is EIP712 {
             );
     }
 }
+
+/*
+cast call
+
+Arguments:
+  [TO]
+          The destination of the transaction
+
+  [SIG]
+          The signature of the function to call
+
+  [ARGS]...
+          The arguments of the function to call
+
+0: contract BallToken 0x5FbDB2315678afecb367f032d93F642f64180aa3
+1: contract MerkleAirdrop 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 
+
+message digest --> with cast call ...
+0xc5d3a33b1cb7d5f27eedbcabe5408d377ee1346754b34b79450d8b89079b8b4a
+
+signature --> with cast wallet sign --no-hash ...
+f47d9c200e94c67755b4aa911ee0634c4eea842222e5211079c51b3b15097b54257fd8baf350281727b5d16e4410efb0c9bfec51ec7a92a9d266cf91ee64f1231c
+
+then split up into v,r, and s
+f47d9c200e94c67755b4aa911ee0634c4eea842222e5211079c51b3b15097b54 -> r -> first 32 bytes
+257fd8baf350281727b5d16e4410efb0c9bfec51ec7a92a9d266cf91ee64f123 -> s -> second 32 bytes
+1c -> v -> last byte 
+*/
